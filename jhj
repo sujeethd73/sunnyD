@@ -1,0 +1,12 @@
+#!bin/bash 
+
+echo hiii
+
+echo chintu
+echo line1
+echo line2
+echo -e "line3 \nline4"
+echo -e "line3 \nline4\tline5"
+
+
+echo gg
