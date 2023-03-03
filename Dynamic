@@ -1,0 +1,5 @@
+#!/bin/bash
+
+today_date="$(date +%F)
+
+echo "good morning , todays date is ${today_date}"
