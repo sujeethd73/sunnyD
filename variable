@@ -1,0 +1,12 @@
+#!/bin/sh
+
+a=10
+b=20
+c=30
+d=40
+
+
+echo $a
+echo {$b}
+echo "$c"
+echo "${d}"
