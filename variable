@@ -7,6 +7,6 @@ d=40
 
 
 echo $a
-echo {$b}
+echo ${b}
 echo "$c"
 echo "${d}"
