@@ -3,7 +3,7 @@
 TODAY_DATE="$(date +%F)"
 no.of.users="$(who | wc -l)"
 
-echo "to show that no.of.users connected to that machine $(who | wc -l)"
+echo "to show that no.of.users connected to that machine $(no.of.users)"
 
 echo "good morning, todays date is ${TODAY_DATE}"
 
