@@ -11,3 +11,4 @@ echo ${b}
 echo "$c"
 echo "${d}"
 echo '${d}'
+echo $e
