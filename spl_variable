@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "name of the ececuted script is: $0"
+echo "First argument from command line: $1"
