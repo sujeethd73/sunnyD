@@ -1,9 +1,9 @@
 #!/bin/bash
 
 TODAY_DATE="$(date +%F)"
-no.of.users="$(who | wc -l)"
+No_OF_USERS="$(who | wc -l)"
 
-echo "to show that no.of.users connected to that machine $(no.of.users)"
+echo "to show that no.of.users connected to that machine $(NO_OF_USERS)"
 
 echo "good morning, todays date is ${TODAY_DATE}"
 
