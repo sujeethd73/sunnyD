@@ -5,6 +5,7 @@ b=20
 c=30
 d=40
 e=test
+f=1000
 
 
 echo $a
