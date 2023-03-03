@@ -5,5 +5,4 @@ No_OF_USERS="$(who | wc -l)"
 
 
 echo "good morning, todays date is ${TODAY_DATE}"
-
 echo "to show that no.of.users connected to that machine $(NO_OF_USERS)"
