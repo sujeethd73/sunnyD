@@ -1,5 +1,6 @@
 #!/bin/bash
 
-today_date="$(date +%F)
+TODAY_DATE="$(date +%F)"
 
-echo "good morning , todays date is ${today_date}"
+echo "good morning, todays date is ${TODAY_DATE}"
+
