@@ -13,3 +13,5 @@ echo "$c"
 echo "${d}"
 echo '${d}'
 echo $e
+echo "printing the value of c : $c"
+
