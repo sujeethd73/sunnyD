@@ -2,4 +2,5 @@
 
 echo -e "\e[32m name of the ececuted script is:\e[0m $0"
 echo "First argument from command line: $1"
+echo -e "\e[33m second argument from command line: \e[0m $2"
 
