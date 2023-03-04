@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sample() {
+    echo "i am msg from function named sample"
+}
+
+sample
+sample
+sample
