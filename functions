@@ -7,3 +7,8 @@ sample() {
 sample
 sample
 sample
+stat() {
+    echo "load average of the meachine is: $(uptime | awk -F : '{print $NF}' | awk -F , '{print $1},)
+    }
+    stat
+    
