@@ -13,6 +13,11 @@ if [ "$b" != "abc" ]; then
    echo "\e[31m both of them are not equal \e[0m"
 fi   
 
+if [ -z $b ]; then
+   echo "variable is empty"
+fi
+   
+
 # demo 0n else if
 
 c=$1
