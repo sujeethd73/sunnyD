@@ -2,7 +2,7 @@
 
 a="abc"
 
-if [ "$a" == "abc" ] ; then
+if ["$a" == "abc"] ; then
    echo -e "\e[32m both of them are equal \e[0m"
 else
    echo -e "\e[31m both them are not equal \e[0m"  
