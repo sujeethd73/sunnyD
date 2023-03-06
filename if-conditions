@@ -2,14 +2,14 @@
 
 a="abc"
 
-if [ "$a" == "abc" ] ; then
+if [ "$a" == "abc" ]; then
    echo -e "\e[32m both of them are equal \e[0m"
 else
    echo -e "\e[31m both them are not equal \e[0m"  
 
 fi
 # demo on not equals string operators
-if [ "$b" != "abc" ] ; then
+if [ "$b" != "abc" ]; then
    echo "\e[31m both of them are not equal \e[0m"
 fi   
 
@@ -17,13 +17,13 @@ fi
 
 c=$1
 
-if [ "$c" -eq "10" ] ; then
+if [ "$c" -eq "10" ]; then
    echo "value of c is 10"
 
-elif [ "$c" -eq "20" ] ; then
+elif [ "$c" -eq "20" ]; then
    echo "value of c is 20"
 
-elif [ "$c" -eq "30" ] ; then
+elif [ "$c" -eq "30" ]; then
    echo "value of c is 30"
 
 else 
