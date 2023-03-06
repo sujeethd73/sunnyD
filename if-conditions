@@ -4,10 +4,8 @@ a="abc"
 
 if [ "$a" == "abc" ] ; then
    echo -e "\e[32m both of them are equal \e[0m"
-   exit 0
 else
-   echo -e "\e[31m both them are not equal \e[0m"
-   exit 1   
+   echo -e "\e[31m both them are not equal \e[0m"  
 
 fi
 # demo on not equals string operators
