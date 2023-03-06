@@ -11,7 +11,8 @@ stat() {
     echo "load average of the meachine is: $(uptime | awk -F : '{print $NF}' | awk -F , '{print $1}')"
     echo "how many users in my mission : $(who | wc -l)"
     echo "function stat is completed"
-    
+    echo "......calling function......"
+    sample
 }
 
 stat
