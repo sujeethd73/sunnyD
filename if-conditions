@@ -10,7 +10,7 @@ else
 fi
 # demo on not equals string operators
 if [ "$b" != "abc" ]; then
-   echo -e "\e[31m both of them are not equal \e[0m"
+   echo -e "\e[33m both of them are not equal \e[0m"
 fi   
 
 if [ -z $b ]; then
