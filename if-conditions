@@ -16,11 +16,12 @@ fi
 if [ -z $b ]; then
    echo "variable is empty"
 fi
-   
+
 
 # demo 0n else if
 
 c=$1
+
 
 if [ "$c" -eq "10" ]; then
    echo "value of c is 10"
