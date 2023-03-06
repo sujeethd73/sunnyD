@@ -21,5 +21,5 @@ elif [ "$c" -eq "20" ] ; then
    echo "value of c is 20"
 elif [ "$c" -eq "30" ] ; then
    echo "value of c is 30"
-else "value of c is not 10 or 20 or 30"
+else "value is not 10 or 20 or 30"
 fi        
