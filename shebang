@@ -3,5 +3,5 @@
 echo hello
 echo hi hello 
 
-echo -e "line1 \n line2"
+echo -e "line1 \nline2"
 
