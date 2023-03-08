@@ -1,0 +1,5 @@
+#!/bin/bash
+
+read -p 'enter your name:' NAME
+
+echo -e "name of the ex user is $NAME"
