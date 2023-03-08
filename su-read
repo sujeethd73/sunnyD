@@ -1,5 +1,7 @@
 #!/bin/bash
 
-read -p 'enter your name:' NAME
+today_date = "$(date +%f)"
+no_of_users="$(who | wc -1)"
 
-echo -e "name of the ex user is $NAME"
+echo "good morning, today date is ${today_date}"
+echo "connected to machine:${no_of_users}"
