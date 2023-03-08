@@ -2,3 +2,6 @@
 
 echo hello
 echo hi hello 
+
+echo -e "line1 \n line2"
+
