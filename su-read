@@ -1,7 +1,0 @@
-#!/bin/bash
-
-today_date="$(date +%F)"
-no_of_users="$(who | wc -l)"
-
-echo "good morning, today date is ${today_date}"
-echo "connected to machine:${no_of_users}"
