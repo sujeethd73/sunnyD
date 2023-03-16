@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for games in cricket volleyball chess caram ; do 
+    echo game name is ${games}
+done
+    
