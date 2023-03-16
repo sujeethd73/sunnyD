@@ -3,4 +3,10 @@
 for games in cricket volleyball chess caram ; do 
     echo game name is ${games}
 done
-    
+
+
+p=5
+while [ $p -gt 0 ] ; do
+     echo Run number is : $p
+     p=$(($p-1))
+     done
