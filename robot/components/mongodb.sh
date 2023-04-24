@@ -3,7 +3,7 @@
 set -e
 
 # verify the script is been executed as root user or not
-USERID=$(id -u)
+
 COMPONENT=mongodb
 
 echo -n "configuring the repo:"
