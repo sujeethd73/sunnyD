@@ -15,10 +15,6 @@ echo -n "installing ${COMPONENT}:"
 yum install -y mongodb-org &>> $LOGFILE
 stat $?
 
-echo -n "updating the mongodb config"
-sed -i -e 's/127.0.0.1/0.0.0.0/' mongod.conf
-stat $?
-
 echo -n "starting the mongodb"
 systemctl enable mongod &>> $LOGFILE
 systemctl start mongod &>> $LOGFILE
