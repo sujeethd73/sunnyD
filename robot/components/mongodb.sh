@@ -31,7 +31,7 @@ stat $?
 
 echo -n "injecting the schema:"
  cd /tmp
-unzip mongodb.zip
+unzip -o mongodb.zip
 cd mongodb-main
 mongo < catalogue.js
 mongo < users.js
