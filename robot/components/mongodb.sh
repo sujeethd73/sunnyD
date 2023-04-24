@@ -33,6 +33,6 @@ echo -n "injecting the schema:"
  cd /tmp
 unzip -o mongodb.zip
 cd mongodb-main
-mongo < catalogue.js
-mongo < users.js
+mongo < catalogue.js &>> $LOGFILE 
+mongo < users.js &>> $LOGFILE
 stat $?
