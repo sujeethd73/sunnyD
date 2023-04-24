@@ -7,4 +7,4 @@ if [ $USERID -ne 0 ] ; then
   exit 1
 fi
 echo "installing nginx" 
- yum install nginx -y &>> /tmp/frontend.log
+yum install nginx -y &>> /tmp/frontend.log
