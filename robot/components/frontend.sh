@@ -31,7 +31,7 @@ echo -n "downloading the component:"
 curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
 stat $?
 
-echo -n"performing the cleaning up:"
+echo -n "performing the cleaning up:"
 
 rm -rf/usr/share/nginx/html/* &>> $LOGFILE*
 stat $?
@@ -49,7 +49,7 @@ echo -n"configuring the revers proxy file:"
 
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
-echo -n"starting the server:"
+echo -n "starting the server:"
 systemctl enable nginx &>> $LOGFILE
 systemctl start nginx &>> $LOGFILE
 stat $?
