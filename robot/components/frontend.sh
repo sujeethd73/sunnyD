@@ -22,7 +22,7 @@ fi
 
 echo -n "installing nginx:"
 
-yum install SYGYIG -y &>> $LOGFILE
+yum install nginx -y &>> $LOGFILE
 stat $?
 
 
