@@ -9,6 +9,11 @@ if [ $USERID -ne 0 ] ; then
 fi
 echo "installing nginx:" 
 yum install nginx -y &>> /tmp/frontend.log
+if [ $? -eq 0 ]: then
+  echo -n "\e[32m success \e[0m"
+  echo -n "\e[31m failure \e[0m"
+fi 
+
 echo "downloading the component:"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 
