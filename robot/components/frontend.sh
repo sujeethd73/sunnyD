@@ -7,14 +7,14 @@ if [ $USERID -ne 0 ] ; then
   echo -e "\e[31m you must have to run this script as a room user or sudo previlage \e[0m"
   exit 1
 fi
-echo -n"installing nginx:" 
+echo -n "installing nginx:" 
 yum install nginx -y &>> /tmp/frontend.log
 if [ $? -eq 0 ]: then
   echo -e "\e[32m success \e[0m"
   echo -e "\e[31m failure \e[0m"
 fi 
 
-echo -n"downloading the component:"
+echo -n "downloading the component:"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 
 echo "performing the cleaning up:"
