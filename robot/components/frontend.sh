@@ -1,3 +1,4 @@
 #!/bin/bash
 
-echo "I am frontend component"
+echo "i am frontend component"
+
