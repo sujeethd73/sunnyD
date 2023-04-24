@@ -25,4 +25,14 @@ systemctl enable mongod &>> $LOGFILE
 systemctl start mongod &>> $LOGFILE
 stat $?
 
+echo -n "download the schema:"
+curl -s -L -o /tmp/mongodb.zip "https://github.com/stans-robot-project/mongodb/archive/main.zip"
+stat $?
 
+echo -n "injecting the schema:"
+ cd /tmp
+unzip mongodb.zip
+cd mongodb-main
+mongo < catalogue.js
+mongo < users.js
+stat $?
