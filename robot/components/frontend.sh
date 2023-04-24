@@ -2,6 +2,7 @@
 set -e
 
 COMPONENT=frontend
+source components/comman.sh
 
 echo -n "installing nginx:"
 
