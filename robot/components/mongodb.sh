@@ -8,10 +8,10 @@ COMPONENT=mongodb
 source components/common.sh
 
 echo -n "configuring the repo:"
-curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
+curl -s -o /etc/yum.repos.d/${COMPONENT}.repo https://raw.githubusercontent.com/stans-robot-project/${COMPONENT}/main/mongo.repo
 stat $?
 
-echo -n "installing mongodb:"
+echo -n "installing ${COMPONENT}:"
 yum install -y mongodb-org &>> $LOGFILE
 stat $?
 
