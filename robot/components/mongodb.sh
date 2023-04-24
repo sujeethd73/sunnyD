@@ -16,7 +16,7 @@ yum install -y mongodb-org &>> $LOGFILE
 stat $?
 
 echo -n "chainging the ip address:"
-sed -i -e 's/127.0.0.1/0.0.0.0/' mongod.conf
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 stat $?
 
 
