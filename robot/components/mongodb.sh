@@ -15,7 +15,9 @@ echo -n "installing ${COMPONENT}:"
 yum install -y mongodb-org &>> $LOGFILE
 stat $?
 
-# sed -i -e 's/127.0.0.1/0.0.0.0/' mongod.conf
+echo -n "chainging the ip address:"
+sed -i -e 's/127.0.0.1/0.0.0.0/' mongod.conf
+stat $?
 
 
 echo -n "starting the mongodb"
