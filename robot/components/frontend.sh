@@ -33,11 +33,11 @@ stat $?
 
 echo -n "performing the cleaning up:"
 
-rm -rf/usr/share/nginx/html/* &>> $LOGFILE*
+rm -rf /usr/share/nginx/html/* &>> $LOGFILE
 stat $?
 
 cd /usr/share/nginx/html
-echo -n"unzipping the component:"
+echo -n "unzipping the component:"
 
 unzip /tmp/$COMPONENT.zip &>> $LOGFILE
 stat $?
