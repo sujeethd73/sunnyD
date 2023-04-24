@@ -45,7 +45,7 @@ stat $?
 mv $COMPONENT-main/* .
 mv static/* .
 rm -rf $COMPONENT-main README.md
-echo -n"configuring the revers proxy file:"
+echo -n "configuring the revers proxy file:"
 
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
