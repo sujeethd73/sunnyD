@@ -17,8 +17,8 @@ id $APPUSER &>> $LOGFILE
 if [ $? -ne 0 ]; then
 echo -n "careating app user:"
 useradd roboshop &>> $LOGFILE
-exit 1
 stat $?
+exit 1
 fi
 
 echo -n "downloading the component:"
