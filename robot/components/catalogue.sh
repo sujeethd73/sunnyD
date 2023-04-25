@@ -35,7 +35,6 @@ stat $?
 
 echo -n "installing nodejs component:"
 cd $COMPONENT
-npm install 
 stat $?
 
 echo -n "changing permissions to $APPUSER:"
