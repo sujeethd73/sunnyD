@@ -43,7 +43,7 @@ chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT
 stat $?
 
 echo -n "starting $COMPONENT service:"
-systemcyl demon-reload 
+systemctl demon-reload 
 systenctl start $COMPONENT
 STAT $?
 
