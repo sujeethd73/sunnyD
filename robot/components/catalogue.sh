@@ -31,7 +31,6 @@ stat $?
 
 echo -n "performing cleanup:"
 rm -rf $COMPONENT
-mv $COMPONENT-main $COMPONENT
 stat $?
 
 echo -n "installing nodejs component:"
