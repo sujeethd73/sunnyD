@@ -42,6 +42,12 @@ echo -n "changing permissions to $APPUSER:"
 chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT
 stat $?
 
+echo -n "starting $COMPONENT service:"
+systemcyl demon-reload 
+systenctl start $COMPONENT
+STAT $?
+
+
 
 
 
