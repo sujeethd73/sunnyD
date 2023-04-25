@@ -44,8 +44,8 @@ stat $?
 
 echo -n "starting $COMPONENT service:"
 systemctl demon-reload 
-systenctl start $COMPONENT
-STAT $?
+systemctl start $COMPONENT
+stat $?
 
 
 
