@@ -14,11 +14,10 @@ yum install nodejs -y &>> $LOGFILE
 stat $?
 
 id $APPUSER &>> $LOGFILE
-if [ $? -ne 0 ]; then
+if [ $? -ne 0 ] ; then
 echo -n "careating app user:"
 useradd roboshop &>> $LOGFILE
 stat $?
-exit 1
 fi
 
 echo -n "downloading the component:"
@@ -36,7 +35,7 @@ stat $?
 
 echo -n "installing nodejs component:"
 cd $COMPONENT
-npm install &>> $LOGFILE
+npm install 
 stat $?
 
 echo -n "changing permissions to $APPUSER:"
