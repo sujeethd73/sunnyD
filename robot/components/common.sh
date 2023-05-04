@@ -60,7 +60,8 @@ DOWNLOAD_AND_EXTRACT() {
 
 NPM_INSTALL() {
   echo -n "installing $COMPONENT dependencies:"
-  cd $COMPONENT-main &>> $LOGFILE
+  mv $COMPONENT-main $COMPONENT
+  cd $COMPONENT &>> $LOGFILE
   npm install &>> $LOGFILE
   stat $?
 }
