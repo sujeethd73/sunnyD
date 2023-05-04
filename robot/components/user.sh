@@ -1,6 +1,6 @@
 ##!/bin/bash
 
-COMPONENTS=user
+COMPONENT=user
 
 source components/common.sh
 APPUSER=roboshop
