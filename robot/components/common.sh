@@ -67,6 +67,8 @@ NPM_INSTALL() {
 CONFIGURE_SERVICE() {
   echo -n "configuring $COMPONENT service:"
   sed -i -e 's/MONGO_DNSNAME/172.31.27.225/' systemd.service
+  stat $?
+  echo -n "moving:"
   mv /home/roboshop/$COMPONENT-main/systemd.service /etc/systemd/system/$COMPONENT.service
   stat $?
 
