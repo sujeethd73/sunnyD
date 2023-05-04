@@ -1,6 +1,4 @@
 LOGFILE=/tmp/$COMPONENT.log
-
-
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ] ; then
@@ -24,6 +22,7 @@ NODEJS()  {
   echo -n "installing the nodejs:"
   yum install nodejs -y
   stat $?
+
   # calling create_user function
   CREATE_USER
   # downloading the code
@@ -36,24 +35,27 @@ NODEJS()  {
 
 CREATE_USER()  {
   id $APPUSER &>> $LOGFILE
-  if [ $? -ne 0 ] ; then
-  echo -n "careating app user:"
-  useradd $APPUSER
-  stat $?
-  fi
-}
+  if [ $? -ne 0 ]; then
+    echo -n "careating app user:"
+    useradd $APPUSER &>> $LOGFILE
+    stat $?
+    fi
+  }
 
 DOWNLOAD_AND_EXTRACT() {
-  echo -n "downloading the $component:"
-  curl -s -L -o /tmp/cart.zip "https://github.com/stans-robot-project/cart/archive/main.zip"
+  echo -n "Downloading the $COMPONENT:"
+  curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
   stat $?
 
   echo -n "performing cleanup:"
   cd /home/$APPUSER
-  unzip -o /tmp/$COMPONENT.zip &>> $LOGFILE && mv $COMPONENT-main $COMPONENT
+  unzip -o /tmp/$COMPONENT.zip &>> $LOGFILE
+  mv $COMPONENT-main $COMPONENT &>> $LOGFILE
   stat $?
+
   echo -n "changing permissions to $APPUSER:"
-  chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT && chmod -R 775 /home/roboshop/$COMPONENT
+  chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT
+  chmod -R 775 /home/roboshop/$COMPONENT
   stat $?
 }
 
