@@ -63,9 +63,7 @@ DOWNLOAD_AND_EXTRACT() {
 
     echo -n "changing permissions to $APPUSER:"
     chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT &>> $LOGFILE
-    stat $?
-    echo -n "giving access to $APPUSER:"
-    chmod -R 775 /home/roboshop/$COMPONENT &>> $LOGFILE
+    chmod -R 777 /home/roboshop/$COMPONENT &>> $LOGFILE
     stat $?
 }
 
@@ -78,8 +76,6 @@ NPM_INSTALL() {
 CONFIGURE_SERVICE() {
     echo -n "configuring $COMPONENT service:"
     sed -i -e 's/MONGO_DNSNAME/172.31.31.151/' -e 's/REDIS_ENDPOINT/172.31.80.33/' -e 's/CATALOGUE_ENDPOINT/172.31.18.22/' systemd.service &>> $LOGFILE
-    stat $?
-    echo -n "moving:"
     mv /home/roboshop/$COMPONENT/systemd.service /etc/systemd/system/$COMPONENT.service
     stat $?
 
