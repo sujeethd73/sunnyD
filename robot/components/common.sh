@@ -81,7 +81,6 @@ CONFIGURE_SERVICE() {
   systemctl daemon-reload $COMPONENT &>> $LOGFILE
   systemctl start $COMPONENT &>> $LOGFILE
   stat $?
-
 }
 
 
