@@ -53,8 +53,8 @@ DOWNLOAD_AND_EXTRACT() {
     stat $?
 
     echo -n "changing permissions to $APPUSER:"
-    chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT
-    chmod -R 775 /home/roboshop/$COMPONENT
+    chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT-main
+    chmod -R 775 /home/roboshop/$COMPONENT-main
     stat $?
 }
 
