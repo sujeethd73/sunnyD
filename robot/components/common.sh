@@ -44,7 +44,7 @@ CREATE_USER()  {
 
 DOWNLOAD_AND_EXTRACT() {
   echo -n "Downloading the $COMPONENT:"
-  curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
+  curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/stans-robot-project/$COMPONENT/archive/main.zip" &>> $LOGFILE
   stat $?
 
   echo -n "performing cleanup:"
@@ -61,19 +61,19 @@ DOWNLOAD_AND_EXTRACT() {
 
 NPM_INSTALL() {
   echo -n "installing $COMPONENT dependencies:"
-  cd $COMPONENT
+  cd $COMPONENT &>> $LOGFILE
   npm install &>> $LOGFILE
   stat $?
 }
 CONFIGURE_SERVICE() {
   echo -n "configuring $COMPONENT service:"
   sed -i -e 's/mongo-end point/174.12.54.45/' -e 's/mongo-end point/174.12.54.45/' -e 's/redis-end point/174.12.54.45/' /home/roboshop/$COMPONENT/systemd.service
-  mv /home/roboshop/$COMPONENT/systemd.service /etc/systemd/system/$COMPONENT.service
+  mv /home/roboshop/$COMPONENT/systemd.service /etc/systemd/system/$COMPONENT.service &>> $LOGFILE
   stat $?
 
   echo -n "starting $COMPONENT service:"
-  systemctl daemon-reload
-  systemctl start user
+  systemctl daemon-reload &>> $LOGFILE
+  systemctl start user &>> $LOGFILE
   stat $?
 }
 
