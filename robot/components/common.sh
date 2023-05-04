@@ -70,10 +70,8 @@ DOWNLOAD_AND_EXTRACT() {
 }
 
 NPM_INSTALL() {
-    echo -n "chaing directory:"
-    cd $COMPONENT
-    stat $?
     echo -n "installing $COMPONENT dependencies:"
+    cd $COMPONENT
     npm install &>> $LOGFILE
     stat $?
 }
