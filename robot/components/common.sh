@@ -49,11 +49,7 @@ DOWNLOAD_AND_EXTRACT() {
 
     echo -n "moving $COMPONENT code to $APPUSER home directory:"
     rm -rf /home/$APPUSER/$COMPONENT
-    stat $?
-    echo -n "chainging directory to $APPUSER:"
     cd /home/$APPUSER
-    stat $?
-    echo -n "unziping the $COMPONENT:"
     unzip -o /tmp/$COMPONENT.zip &>> $LOGFILE
     stat $?
 
