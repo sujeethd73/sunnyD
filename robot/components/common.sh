@@ -16,11 +16,11 @@ stat() {
 
 NODEJS()  {
   echo -n "configuring the nodejs repositery:"
-  curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
+  curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - &>> $LOGFILE
   stat $?
 
   echo -n "installing the nodejs:"
-  yum install nodejs -y
+  yum install nodejs -y &>> $LOGFILE
   stat $?
 
   # calling create_user function
