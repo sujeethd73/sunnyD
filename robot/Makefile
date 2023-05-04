@@ -10,5 +10,6 @@ redis:
 	bash components/redis.sh
 user:
 	bash components/user.sh
-
+mysql:
+	bash components/mysql.sh
 	
