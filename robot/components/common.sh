@@ -50,7 +50,7 @@ DOWNLOAD_AND_EXTRACT() {
     echo -n "moving $COMPONENT code to $APPUSER home directory:"
     rm -rf /home/$APPUSER/$COMPONENT
     stat $?
-    echo -n "cd to $APPUSER:"
+    echo -n "chainging directory to $APPUSER:"
     cd /home/$APPUSER
     stat $?
     echo -n "unziping the $COMPONENT:"
@@ -70,7 +70,7 @@ DOWNLOAD_AND_EXTRACT() {
 }
 
 NPM_INSTALL() {
-    echo -n "chaing:"
+    echo -n "chaing directory:"
     cd $COMPONENT
     stat $?
     echo -n "installing $COMPONENT dependencies:"
@@ -86,7 +86,7 @@ CONFIGURE_SERVICE() {
     stat $?
 
     echo -n "starting $COMPONENT service:"
-    systemctl daemon-reload $COMPONENT &>> $LOGFILE
+    systemctl daemon-reload &>> $LOGFILE
     systemctl start $COMPONENT &>> $LOGFILE
     stat $?
 }
