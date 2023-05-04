@@ -47,9 +47,14 @@ DOWNLOAD_AND_EXTRACT() {
     curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/stans-robot-project/$COMPONENT/archive/main.zip" &>> $LOGFILE
     stat $?
 
-    echo -n "performing cleanup:"
+    echo -n "moving $COMPONENT code to $APPUSER home directory:"
+    rm -rf /home/$APPUSER/$COMPONENT
     cd /home/$APPUSER
     unzip -o /tmp/$COMPONENT.zip &>> $LOGFILE
+    stat $?
+
+    echo -n "performing cleaning:"
+    mv $COMPONENT-main $COMPONENT
     stat $?
 
     echo -n "changing permissions to $APPUSER:"
@@ -60,8 +65,7 @@ DOWNLOAD_AND_EXTRACT() {
 
 NPM_INSTALL() {
   echo -n "installing $COMPONENT dependencies:"
-  mv $COMPONENT-main $COMPONENT
-  cd $COMPONENT &>> $LOGFILE
+  cd $COMPONENT
   npm install &>> $LOGFILE
   stat $?
 }
