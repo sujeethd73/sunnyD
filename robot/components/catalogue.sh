@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMPONENTS=catalogue
+COMPONENT=catalogue
 
 source components/common.sh
 APPUSER=roboshop
