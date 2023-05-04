@@ -49,7 +49,11 @@ DOWNLOAD_AND_EXTRACT() {
 
     echo -n "moving $COMPONENT code to $APPUSER home directory:"
     rm -rf /home/$APPUSER/$COMPONENT
+    stat $?
+    echo -n "cd to $APPUSER:"
     cd /home/$APPUSER
+    stat $?
+    echo -n "unziping the $COMPONENT:"
     unzip -o /tmp/$COMPONENT.zip &>> $LOGFILE
     stat $?
 
@@ -59,13 +63,17 @@ DOWNLOAD_AND_EXTRACT() {
 
     echo -n "changing permissions to $APPUSER:"
     chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT &>> $LOGFILE
+    stat $?
+    echo -n "giving access to $APPUSER:"
     chmod -R 775 /home/roboshop/$COMPONENT &>> $LOGFILE
     stat $?
 }
 
 NPM_INSTALL() {
-    echo -n "installing $COMPONENT dependencies:"
+    echo -n "chaing:"
     cd $COMPONENT
+    stat $?
+    echo -n "installing $COMPONENT dependencies:"
     npm install &>> $LOGFILE
     stat $?
 }
