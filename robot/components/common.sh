@@ -38,7 +38,7 @@ CREATE_USER()  {
   id $APPUSER &>> $LOGFILE
   if [ $? -ne 0 ] ; then
   echo -n "careating app user:"
-  useradd $APPUSER &>> $LOGFILE
+  useradd $APPUSER
   stat $?
   fi
 }
