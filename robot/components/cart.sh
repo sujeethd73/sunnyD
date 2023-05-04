@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMPONENTS=cart
+COMPONENT=cart
 
 
 source components/common.sh
