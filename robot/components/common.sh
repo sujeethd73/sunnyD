@@ -50,7 +50,7 @@ DOWNLOAD_AND_EXTRACT() {
 
   echo -n "performing cleanup:"
   rm -rf /home/$APPUSER/$COMPONENT
-  cd /home/$APPUSER
+  cd /home/$APPUSER/
   unzip -o /tmp/$COMPONENT.zip &>> $LOGFILE && mv $COMPONENT-main $COMPONENT &>> $LOGFILE
   stat $?
   echo -n "changing permissions to $APPUSER:"
