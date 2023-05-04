@@ -61,14 +61,13 @@ DOWNLOAD_AND_EXTRACT() {
 NPM_INSTALL() {
   echo -n "installing $COMPONENT dependencies:"
   cd $COMPONENT &>> $LOGFILE
-  rm -rf $COMPONENT-main
   npm install &>> $LOGFILE
   stat $?
 }
 CONFIGURE_SERVICE() {
   echo -n "configuring $COMPONENT service:"
   sed -i -e 's/MONGO_DNSNAME/172.31.27.225/' systemd.service
-  mv /home/roboshop/$COMPONENT/systemd.service /etc/systemd/system/$COMPONENT.service
+  mv /home/roboshop/$COMPONENT-main/systemd.service /etc/systemd/system/$COMPONENT.service
   stat $?
 
   echo -n "starting $COMPONENT service:"
