@@ -49,7 +49,7 @@ DOWNLOAD_AND_EXTRACT() {
   stat $?
 
   echo -n "performing cleanup:"
-  cd /home/$APPUSER/
+  cd /home/$APPUSER
   unzip -o /tmp/$COMPONENT.zip &>> $LOGFILE && mv $COMPONENT-main $COMPONENT
   stat $?
   echo -n "changing permissions to $APPUSER:"
