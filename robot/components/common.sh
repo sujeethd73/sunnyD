@@ -51,7 +51,7 @@ DOWNLOAD_AND_EXTRACT() {
   echo -n "performing cleanup:"
   rm -rf /home/$APPUSER/$COMPONENT
   cd /home/$APPUSER/
-  unzip -o /tmp/$COMPONENT.zip &>> $LOGFILE && mv $COMPONENT-main $COMPONENT &>> $LOGFILE
+  unzip -o /tmp/$COMPONENT.zip &>> $LOGFILE && mv $COMPONENT-main $COMPONENT
   stat $?
   echo -n "changing permissions to $APPUSER:"
   chown -R $APPUSER:$APPUSER /home/roboshop/$COMPONENT && chmod -R 775 /home/roboshop/$COMPONENT
