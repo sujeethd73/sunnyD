@@ -7,4 +7,7 @@ No_OF_USERS="$(who | wc -l)"
 echo "good morning, todays date is ${TODAY_DATE}"
 echo "connected to machine:$NO_OF_USERS"
 
+#lnjh
+
+
 
