@@ -12,5 +12,3 @@ user:
 	bash components/user.sh
 mysql:
 	bash components/mysql.sh
-sample:
-	yaml components/sample.yaml
