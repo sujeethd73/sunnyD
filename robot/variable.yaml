@@ -13,5 +13,9 @@
       ansible.builtin.debug:
           msg: "{{ URL }}"
   vars:
-    URL: task.google.com
-    
+    URL: task.google.com                # local variables have the higher priyority
+    - name: printing CIL URL
+      ansible.builtin.debug:
+          msg: "{{ CIL URL }}"
+      vars:
+        CIL_URL: task-cli.google.com    
