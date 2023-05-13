@@ -2,6 +2,8 @@
   hosts: all
   vars:                   #this called as play level variables.
     URL: Play.google.com
+  vars-files:
+    - demos-vars-files.yaml
   tasks:
     - name: printing the URL
       ansible.builtin.debug:
