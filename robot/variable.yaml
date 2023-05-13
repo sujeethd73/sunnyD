@@ -2,7 +2,7 @@
   hosts: all
   vars:                   #this called as play level variables.
     URL: Play.google.com
-  vars-files:
+  vars_files:
     - demo-vars-files.yaml
   tasks:
     - name: printing the URL
