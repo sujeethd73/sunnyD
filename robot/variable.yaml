@@ -1,6 +1,6 @@
 - name: Demo on using variables
   hosts: all
-  vars:
+  vars:                   #this called as play level variables.
     URL: Play.google.com
   tasks:
     - name: printing the URL
@@ -12,3 +12,6 @@
     - name: printing the URL with quotes
       ansible.builtin.debug:
           msg: "{{ URL }}"
+  vars:
+    URL: task.google.com
+    
