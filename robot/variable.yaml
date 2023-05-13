@@ -21,3 +21,6 @@
           msg: "{{ CIL_URL }}"
       vars:
         CIL_URL: task-cli.google.com    
+
+        # facts: fact is nothing but system property
+        
