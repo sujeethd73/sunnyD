@@ -1,10 +1,10 @@
 - name: Play1
   hosts: prod
   tasks:
-    - name: Print Hello from task1 of Play1
+    - name: Print Hello from task1 of Pay1
       ansible.builtin.debug:
-         msg: hai from task1 of Play1
+         msg: hai from task1 of Pay1
 
-    - name: Print Hello from task2 of Play1
+    - name: Print Hello from task2 of Pay1
       ansible.builtin.debug:
-          msg: hai from task2 of Play1
+          msg: hai from task2 of Pay1
