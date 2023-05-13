@@ -2,8 +2,8 @@
   hosts: all
   tasks:
     - name: print OS Distro
-      ansible.builtin.debug:
+      debug:
         msg: OS Distro is {{ ansible_distribution }}
     - name: print Mac Address
-      ansible.builtin.debug:
+      debug:
         msg: Mac Address {{ ansible_default_ipv4.macaddress }}
