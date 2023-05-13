@@ -17,5 +17,5 @@
     - name: printing CIL URL
       ansible.builtin.debug:
           msg: "{{ CIL URL }}"
-      vars:
-        CIL_URL: task-cli.google.com    
+  vars:
+    CIL_URL: task-cli.google.com    
