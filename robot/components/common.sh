@@ -71,7 +71,7 @@ NPM_INSTALL() {
 }
 CONFIGURE_SERVICE() {
     echo -n "configuring $COMPONENT service:"
-    sed -i -e 's/MONGO_DNSNAME/mongodb.sunny.du.devops.us.to/' -e 's/REDIS_ENDPOINT/172.31.80.33/' -e 's/CATALOGUE_ENDPOINT/172.31.18.22/' /home/roboshop/$COMPONENT systemd.service &>> $LOGFILE
+    sed -i -e 's/MONGO_DNSNAME/mongodb.sunny.du.devops.us.to/' -e 's/REDIS_ENDPOINT/redis.sunny.du.devops.us.to/' -e 's/CATALOGUE_ENDPOINT/catalogue.sunny.du.devops.us.to/' /home/roboshop/$COMPONENT systemd.service &>> $LOGFILE
     mv /home/roboshop/$COMPONENT/systemd.service /etc/systemd/system/$COMPONENT.service
     stat $?
 
