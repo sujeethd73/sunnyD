@@ -6,7 +6,7 @@ if [ -z "$1" ]; then
 fi
 
 AMI_ID="$(aws ec2 describe-images --region us-east-1  --filters "Name=name,Values=DevOps-LabImage-CentOS7" | jq '.Images[].ImageId' | sed -e 's/"//g')"
-SGID="$(aws ec2 describe-security-groups --filters Name=group-name,values=ds-73-add | jq '.SecurityGroups[].GroupId' | sed -e 's/"//g')"
+SGID="$(aws ec2 describe-security-groups --filters Name=group-name,Values=ds-73-add | jq '.SecurityGroups[].GroupId' | sed -e 's/"//g')"
 
 echo "AMI ID used to launch instance : $AMI_ID"
 echo "SG ID used to launch instance : $SGID"
