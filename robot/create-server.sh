@@ -11,7 +11,7 @@ SGID="$(aws ec2 describe-security-groups --filters Name=group-name,Values=ds-73-
 echo "AMI ID used to launch instance : $AMI_ID"
 echo "SG ID used to launch instance : $SGID"
 
-
+echo $COMPONENT
 PRIVATE_IP=$(aws ec2 run-instances --image-id $AMI_ID --instance-type t2.micro --security-group-ids $SGID --instance-market-options "MarketType=spot, SpotOptions={SpotInstanceType=Persistent,InstanceInterruptionBehavior=stop}" --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq '.Instances[].privateIpAddress' | sed -e 's/"//g')
 
 sed -e "s/IPADDRESS/${PRIVATE_IP}/" -e "s/COMPONENT/$COMPONENT/" route53.json > /tmp/dns.json
