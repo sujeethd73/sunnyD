@@ -5,5 +5,5 @@
       debug:
         msg: OS Distro is {{ ansible_distribution }}
     - name: print Mac Address
-      debug:
+      debug:     # debug: or ansible.builtin.debug:  both will work
         msg: Mac Address {{ ansible_default_ipv4.macaddress }}
