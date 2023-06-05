@@ -37,7 +37,7 @@ stat $?
 
 echo -n "starting the server:"
 systemctl enable nginx &>> $LOGFILE
-systemctl start nginx &>> $LOGFILE
+systemctl restart nginx &>> $LOGFILE
 stat $?
 
 
