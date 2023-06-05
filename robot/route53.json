@@ -6,6 +6,6 @@
                                     "Name": "COMPONENT.sunny.du.devops.us.to",
                                     "Type": "A",
                                     "TTL": 10,
-                                 "ResourceRecords": [{ "Value": "IPADDRESS"}]
+                                 "ResourceRecords": [{"Value": "IPADDRESS"}]
 }}]
 }
