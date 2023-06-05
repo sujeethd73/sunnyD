@@ -24,7 +24,7 @@ aws route53 change-resource-record-sets --hosted-zone-id $ZONE_ID --change-batch
 }
 
 if [ "$1" == "all" ]; then
-    for component in frontend mongodb catalogue cart user; do
+    for component in frontend mongodb catalogue cart user redis; do
         COMPONENT=$component
         create-server
     done
