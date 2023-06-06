@@ -1,5 +1,5 @@
 - name: Demo on using variables
-  hosts: all
+  hosts: dev
   vars:                   #this called as play level variables.
     URL: Play.google.com
   vars_files:
