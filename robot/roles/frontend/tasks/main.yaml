@@ -6,7 +6,7 @@
 - name: download and extract frontend
   ansible.builtin.unarchive:
     src:  curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
-    dset: /tmp
+    dest: /tmp
     remote_src: yes # if the source is not local, you need to mention remote source as yes.
 
 - name: cleanup of old web content
@@ -17,7 +17,7 @@
 - name: copy frontend content to nginx path
   ansible.builtuin.copy:
     src: /tmp/frontend-main/static/
-    dset: /usr/share/nginx/html
+    dest: /usr/share/nginx/html
     remote_src: yes
 
      
