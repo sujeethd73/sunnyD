@@ -7,12 +7,12 @@
   ansible.builtin.unarchive:
     src:  curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
     dest: /tmp
-    remote_src: yes # if the source is not local, you need to mention remote source as yes.
+    remote_src: yes           # if the source is not local, you need to mention remote source as yes.
 
 - name: cleanup of old web content
   ansible.builtin.file:
     path: /usr/share/nginx/html
-    state: absent # absent means delete present means install
+    state: absent             # absent means delete present means install
 
 - name: copy frontend content to nginx path
   ansible.builtuin.copy:
