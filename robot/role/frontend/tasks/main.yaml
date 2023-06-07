@@ -1,0 +1,4 @@
+- name: installing Nginx
+  ansible.bultin.package:
+    name: Nginx
+    state: present

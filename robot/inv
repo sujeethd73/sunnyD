@@ -1,2 +1,9 @@
 [frontend]
 frontend.sunny.du.devops.us.to
+
+[mongodb]
+mongodb.sunny.du.devops.us.to
+
+[catalogue]
+catalogue.sunny.du.devops.us.to
+
