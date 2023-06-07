@@ -8,5 +8,5 @@
 
     - name: Print Ubuntu Distro
       ansible.builtin.debug:
-        msg: Hello To Ubuntu
+        msg: Hello To CentOS
       When: ansible_distribution == "Ubuntu"
