@@ -4,20 +4,26 @@
     - name: Performing webserver installation
       ansible.builtin.debug:
           msg: webserver installation completed
+      tags: web    
     - name: starting webserver
       ansible.builtin.debug:
           msg: webserver started
+      tags: web    
 
     - name: Performing appserver installation
       ansible.builtin.debug:
           msg: appserver installation completed
+      tags: app
     - name: starting appserver
       ansible.builtin.debug:
           msg: appserver started
+      tags: app    
 
     - name: Performing dbserver installation
       ansible.builtin.debug:
           msg: dbserver installation completed
+      tags: db
     - name: starting dbserver
       ansible.builtin.debug:
-          msg: dbserver started            
+          msg: dbserver started
+      tags: db            
