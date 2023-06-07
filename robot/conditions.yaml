@@ -3,10 +3,10 @@
   tasks:
     - name: Print CentOS Distro
       ansible.builtin.debug:
-       msg: Hello To CentOS
+        msg: Hello To CentOS
       When: ansible_distribution == "CentOS"
 
     - name: Print Ubuntu Distro
       ansible.builtin.debug:
-       msg: Hello To Ubuntu
+        msg: Hello To Ubuntu
       When: ansible_distribution == "Ubuntu"
