@@ -1,0 +1,5 @@
+- name: configure Roboshop project
+  hosts: all
+  roles: 
+      - frontend
+      - mongodb
