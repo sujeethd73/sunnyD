@@ -27,3 +27,6 @@
       ansible.builtin.debug:
           msg: dbserver started
       tags: db            
+
+      #if your palybook there are having "n" number of tasks. if you want to run specific thing related task
+      # answer::  using tags {ex: -t app or -t web or -t db}
