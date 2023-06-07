@@ -1,4 +1,4 @@
-- name: configure Roboshop project
+- name: configure roboshop project
   hosts: frontend
   become: yes
   roles: 
