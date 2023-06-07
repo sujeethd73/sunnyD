@@ -2,21 +2,21 @@
   hosts: all
   tasks:
     - name: Performing webserver installation
-      ansible.builtin.shell:
+      ansible.builtin.debug:
           msg: webserver installation completed
     - name: starting webserver
       ansible.builtin.debug:
           msg: webserver started
 
     - name: Performing appserver installation
-      ansible.builtin.shell:
+      ansible.builtin.debug:
           msg: appserver installation completed
     - name: starting appserver
       ansible.builtin.debug:
           msg: appserver started
 
     - name: Performing dbserver installation
-      ansible.builtin.shell:
+      ansible.builtin.debug:
           msg: dbserver installation completed
     - name: starting dbserver
       ansible.builtin.debug:
