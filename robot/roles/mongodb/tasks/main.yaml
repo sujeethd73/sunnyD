@@ -33,7 +33,7 @@
 
 
 - name: load users schema
-  community.mongodb.mongodb-shell:
+  community.mongodb.mongodb_shell:
      file: "/tmp/mongodb-main/users.js"
      idempotent: yes
 
