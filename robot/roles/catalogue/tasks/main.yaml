@@ -1,0 +1,13 @@
+- name: comfiguring the yum repo
+  ansible.builtin.shell: curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
+
+- name: install nodejs
+  ansible.builtin.yum:
+    name: "{{item}}"
+    state: present
+  loop:
+    - nodejs
+    - gcc-c++
+
+
+
