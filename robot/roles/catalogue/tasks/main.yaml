@@ -43,7 +43,7 @@
   ansible.builtin.systemd:
     state: restarted
     daemon-reload: yes
-    name: "{{COMPONENT}}""
+    name: "{{COMPONENT}}"
 
 
 
