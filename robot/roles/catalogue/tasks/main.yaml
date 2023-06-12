@@ -46,6 +46,9 @@
     daemon-reload: yes
     name: "{{COMPONENT}}"
 
+- name: set host name
+  ansible.builtin.shell: set-hostname {{COMPONENt}}
+
 
 
 
