@@ -4,7 +4,7 @@
     dest: /etc/systemd/system/{{COMPONENT}}.service
 
 - name: installing redis
-  ansible.builtin.yum:
+  ansible.builtin.package:
     name: redis
     state: installed
 
