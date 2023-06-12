@@ -1,0 +1,15 @@
+- name: copying the repo
+  ansible.builtin.copy:
+    src: redis.repo
+    dest: /etc/systemd/system/{{COMPONENT}}.service
+
+- name: installing redis
+  ansible.builtin.yum:
+    name: redis-6.2.11
+    state: installed
+
+- name: update redis config
+  ansible.builtin.replace:
+    path: /etc/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'   
