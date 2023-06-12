@@ -31,4 +31,8 @@
     enabled: yes
 
 
+- name: set-hostname
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
+
+
      

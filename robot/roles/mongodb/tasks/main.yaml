@@ -33,6 +33,9 @@
       - catalogue
       - users
 
+- name: set-hostname
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
+
 #- name: load users schema
  # community.mongodb.mongodb_shell:
  #    file: "/tmp/mongodb-main/users.js"
