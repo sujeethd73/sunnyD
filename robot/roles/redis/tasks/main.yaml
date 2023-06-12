@@ -14,19 +14,14 @@
     regexp: '127.0.0.1'
     replace: '0.0.0.0' 
 
-- name: Restarting Service 
-  ansible.builtin.service:
-    state: started
-    name: redis 
-    enabled: yes 
+- name: Restart Redis service
+  become: true
+  service:
+    name: redis
+    state: restarted
 
 - name: Doing set-hostname 
   ansible.builtin.include_role:
     name: common
     tasks_from: set-hostname
 
-- name: Restart Redis service
-  become: true
-  service:
-    name: redis
-    state: restarted
