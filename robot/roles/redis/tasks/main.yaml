@@ -24,3 +24,9 @@
   ansible.builtin.include_role:
     name: common
     tasks_from: set-hostname
+
+- name: Restart Redis service
+  become: true
+  service:
+    name: redis
+    state: restarted
