@@ -33,10 +33,12 @@
       - catalogue
       - users
 
-- name: set-hostname
-  ansible.builtin.shell: set-hostname {{COMPONENT}}
+- name: doing set-hostname
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set-hostname
 
-#- name: load users schema
+# name: load users schema
  # community.mongodb.mongodb_shell:
  #    file: "/tmp/mongodb-main/users.js"
  #    idempotent: yes
