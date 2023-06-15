@@ -5,7 +5,7 @@ User=roboshop
 Environment=MONGO=true
 Environment=MONGO_URL="mongodb://mongodb.sunny.du.devops.us.to:27017/catalogue"
 ExecStart=/bin/node /home/roboshop/catalogue/server.js
-SyslogIdentifier=catalogue
+SyslogIdentifier=cart
 
 [Install]
 WantedBy=multi-user.target
