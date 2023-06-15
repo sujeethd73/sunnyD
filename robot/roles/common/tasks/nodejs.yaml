@@ -7,7 +7,7 @@
     state: present
   loop:
     - nodejs
-    #- gcc-c++
+    - gcc-c++
 
 - name: Creating roboshop user account 
   ansible.builtin.include_role:
