@@ -6,8 +6,8 @@
     name: "{{item}}"
     state: present
   loop:
-    
-    - gcc-c++
+    - nodejs
+    #- gcc-c++
 
 - name: Creating roboshop user account 
   ansible.builtin.include_role:
