@@ -39,7 +39,7 @@
 - name: configuring the service
   ansible.builtin.include_role:
     name: common
-    tasks_from: config-user
+    tasks_from: config-service
 
 - name: Doing set-hostname 
   ansible.builtin.include_role:
