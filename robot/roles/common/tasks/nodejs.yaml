@@ -9,6 +9,11 @@
     - nodejs
     - gcc-c++
 
+- name: Creating roboshop user account 
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: create-user
+
 - name: downloading and extracting component
   ansible.builtin.include_role:
     name: common
@@ -34,7 +39,12 @@
 - name: configuring the service
   ansible.builtin.include_role:
     name: common
-    tasks_from: config-service
+    tasks_from: config-user
+
+- name: Doing set-hostname 
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set-hostname 
 
 
 
