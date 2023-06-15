@@ -1,11 +1,11 @@
 [Unit]
-Description = cart Service
+Description = Catalogue Service
 [Service]
 User=roboshop
-Environment=REDIS_HOST=redis.sunny.du.devops.us.to
-Environment=CATALOGUE_HOST=catalogue.sunny.du.devops.us.to
-ExecStart=/bin/node /home/roboshop/cart/server.js
-SyslogIdentifier=cart
+Environment=MONGO=true
+Environment=MONGO_URL="mongodb://mongodb.sunny.du.devops.us.to:27017/catalogue"
+ExecStart=/bin/node /home/roboshop/catalogue/server.js
+SyslogIdentifier=catalogue
 
 [Install]
 WantedBy=multi-user.target
