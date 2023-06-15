@@ -1,0 +1,9 @@
+- name: configuring nodejs component
+  ansible.builtin.include_role:
+    name: common
+
+
+
+
+
+
