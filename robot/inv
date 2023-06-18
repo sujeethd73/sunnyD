@@ -15,3 +15,10 @@ user.sunny.du.devops.us.to
 
 [cart]
 cart.sunny.du.devops.us.to
+
+[mysql]
+mysql.sunny.du.devops.us.to
+
+
+[rabbitmq]
+rabbitmq.sunny.du.devops.us.to
