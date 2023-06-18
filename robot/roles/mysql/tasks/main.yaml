@@ -38,6 +38,38 @@
     - name: reset mysql default login_password
       ansible.builtin.shell: mysql --connect-expired-password  -uroot -p"{{DEFAULT_ROOT_PASSWORD.stdout}}" < /tmp/root_password.sql
       register: DEFAULT_ROOT_PASSWORD
+
+- name: checking password validate plugin
+  ansible.builtin.shell: echo show plugins; | mysql -uroot -pRoboShop@1 | grep validate_password
+  register: PLUGIN_INFO
+  ignore_errors: yes
+
+- name: uninstall password validate plugin
+  when: PLUGIN_INFO.rc == 0
+  block:
+    - name: copying the password validate command
+      ansible.builtin.copy:
+        scr: password_validate.mysql
+        dest: /tmp/password_validate.repo
+
+    - name: uninstall password validate plugin
+      ansible.builtin.shell: mysql --connect-expired-password -uroot -pRoboShop@1 < /tmp/password_validate.repo
+
+- name: download and extracting mysql
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download
+
+- name: load schema
+  community.mysql.mysql_db:
+    state: import
+    name: all 
+    target: /tmp/mysql-main/shipping.sql
+    login_user: root
+    login_password: RoboShop@1
+
+
+
       
 
 
