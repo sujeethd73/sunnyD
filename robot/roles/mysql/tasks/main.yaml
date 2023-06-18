@@ -7,7 +7,7 @@
   ansible.builtin.yum:
     name: 
       - mysql-community-server
-      - PyMySQL
+      - MySQl-python
     state: installed
 
 - name: starting mysql
@@ -15,3 +15,32 @@
     name: mysqld
     state: started
     enabled: yes
+
+- name: get mysql version with non-default credentials
+  community.mysql.mysql_info:
+    login_user: root
+    login_password: RoboShop@1
+  ignore_errors: yes
+  register: stat
+
+- name: password reset block
+  when: stat.failed
+  block:
+    - name: fetch mysql default login_password
+      ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}'
+      register: DEFAULT_ROOT_PASSWORD
+      when: stat.failed
+
+    - name: copy mysql password reset file
+      ansible.builtin.copy:
+        src: root_password.sql
+        dest: /tmp/root_password.sql
+      when: stat.failed
+
+    - name: reset mysql default login_password
+      ansible.builtin.shell: mysql --conect-expired-password -uroot -p"{{DEFAULT_ROOT_PASSWORD}}" < /tmp/root_password.sql
+      register: DEFAULT_ROOT_PASSWORD
+      when: stat.failed
+
+
+
