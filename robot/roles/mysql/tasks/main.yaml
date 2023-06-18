@@ -49,7 +49,7 @@
   block:
     - name: copying the password validate command
       ansible.builtin.copy:
-        scr: password_validate.mysql
+        src: password_validate.mysql
         dest: /tmp/password_validate.mysql
 
     - name: uninstall password validate plugin
