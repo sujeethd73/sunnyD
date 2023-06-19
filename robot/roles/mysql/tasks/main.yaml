@@ -68,6 +68,11 @@
     login_user: root
     login_password: RoboShop@1
 
+- name: Doing set-hostname 
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set-hostname
+
 
 
       
