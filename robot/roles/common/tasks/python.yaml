@@ -1,0 +1,60 @@
+- name: install python
+  ansible.builtin.yum:
+    name: "{{item}}"
+    state: present
+  loop:
+    - python36
+    - gcc
+    - python3-devel
+
+- name: Creating roboshop user account 
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: create-user
+
+- name: downloading and extracting component
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download
+
+- name: cleanig the old content
+  ansible.builtin.file:
+    path: /home/roboshop/{{COMPONENT}}
+    state: absent
+
+- name: copy file
+  ansible.builtin.copy:
+    src: /tmp/{{COMPONENT}}-main/
+    dest: /home/roboshop/{{COMPONENT}}/  
+    remote_src: yes
+  become_user: roboshop
+
+- name: Installing dependencies
+  community.general.pip:
+    requirements: /home/roboshop/{{COMPONENT}}/requirements.txt
+    executable: pip3
+
+
+- name: updating the user ID
+  ansible.builtin.lineinfile:
+    path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
+    regexp: '^uid'
+    line: uid = {{APP_USER_INFO.uid}}
+
+- name: updating the user ID
+  ansible.builtin.lineinfile:
+    path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
+    regexp: '^gid'
+    line: gid = {{APP_USER_INFO.group}}
+
+- name: configuring the service
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: config-service
+
+- name: Doing set-hostname 
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set-hostname
+
+
