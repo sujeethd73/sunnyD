@@ -19,6 +19,14 @@ cart.sunny.du.devops.us.to
 [mysql]
 mysql.sunny.du.devops.us.to
 
+[shipping]
+shipping.sunny.du.devops.us.to
 
 [rabbitmq]
 rabbitmq.sunny.du.devops.us.to
+
+[payment]
+payment.sunny.du.devops.us.to
+
+[dispatch]
+dispatch.sunny.du.devops.us.to
