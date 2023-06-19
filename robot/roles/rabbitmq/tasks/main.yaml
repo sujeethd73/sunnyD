@@ -23,7 +23,7 @@
       - vhost: /
         configure_priv: .*
         read_priv: .*
-        wtite_priv: .*
+        write_priv: .*
     state: present
 
 
