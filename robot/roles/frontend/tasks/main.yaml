@@ -28,6 +28,7 @@
   ansible.builtin.service:
     name: nginx
     state: restarted
+    daemon_reload: yes
     enabled: yes
 
 
