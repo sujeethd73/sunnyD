@@ -30,7 +30,7 @@
   become_user: roboshop
 
 - name: Installing dependencies
-  community.builtin.pip:
+  ansible.builtin.pip:
     requirements: /home/roboshop/{{COMPONENT}}/requirements.txt
     executable: pip3
 
